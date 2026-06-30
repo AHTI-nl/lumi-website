@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <!-- Amsterdam XXX crosses -->
+  <g fill="#2f2c28">
+    <!-- Three St. Andrew's crosses -->
+    <path d="M8 8l6 6 6-6 2 2-6 6 6 6-2 2-6-6-6 6-2-2 6-6-6-6z"/>
+    <path d="M28 8l6 6 6-6 2 2-6 6 6 6-2 2-6-6-6 6-2-2 6-6-6-6z"/>
+    <path d="M48 8l6 6 6-6 2 2-6 6 6 6-2 2-6-6-6 6-2-2 6-6-6-6z"/>
+  </g>
+  <text x="68" y="20" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#2f2c28">Gemeente</text>
+  <text x="68" y="36" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#2f2c28">Amsterdam</text>
+</svg>

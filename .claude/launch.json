@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "lumi-marketing",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "/Users/maartenjanssen/Library/CloudStorage/Dropbox/dvd/lumi-marketing", "-l", "3456"],
+      "port": 3456
+    }
+  ]
+}

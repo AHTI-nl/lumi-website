@@ -1,0 +1,8 @@
+{
+  "name": "lumi-marketing",
+  "version": "1.0.0",
+  "description": "Marketing website voor Lumi — digitaal gezondheidsplatform voor Amsterdammers",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}

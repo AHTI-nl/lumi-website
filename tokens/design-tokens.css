@@ -1,0 +1,171 @@
+/* ============================================
+   Lumi Design Tokens
+   Bron: Figma Foundation (ZEvL0pfaBWWxcmHSniwjtp)
+   ============================================ */
+
+:root {
+  /* ─── Font ─────────────────────────────────── */
+  --font-family: 'IBM Plex Sans', sans-serif;
+
+  /* ─── Font Weights ─────────────────────────── */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ─── Font Sizes (mobile-first) ────────────── */
+  --font-size-heading-1: 32px;
+  --font-size-heading-2: 24px;
+  --font-size-heading-3: 22px;
+  --font-size-heading-4: 20px;
+  --font-size-heading-5: 18px;
+  --font-size-heading-6: 16px;
+  --font-size-subheading: 20px;
+  --font-size-body-large: 18px;
+  --font-size-body: 16px;
+  --font-size-body-small: 14px;
+  --font-size-body-xsmall: 12px;
+  --font-size-quote: 18px;
+  --font-size-label: 16px;
+  --font-size-caption: 14px;
+
+  /* ─── Line Heights ─────────────────────────── */
+  --line-height-heading: 1.24;
+  --line-height-body: 1.6;
+  --line-height-button: 1.44;
+
+  /* ─── Primary (warm neutrals) ──────────────── */
+  --color-primary-50: #f9f7f4;
+  --color-primary-100: #f2eee8;
+  --color-primary-200: #e7e1d9;
+  --color-primary-300: #d5cec3;
+  --color-primary-400: #b4aea6;
+  --color-primary-500: #9a9184;
+  --color-primary-600: #6e685e;
+  --color-primary-700: #4f4c48;
+  --color-primary-800: #2f2c28;
+  --color-primary-900: #0f0c27;
+
+  /* ─── Secondary (blauw) ────────────────────── */
+  --color-secondary-50: #f0f8ff;
+  --color-secondary-100: #e1f1fb;
+  --color-secondary-200: #d1eaf7;
+  --color-secondary-300: #a9cee4;
+  --color-secondary-500: #7eb6d9;
+  --color-secondary-600: #4c87ad;
+  --color-secondary-700: #35627e;
+  --color-secondary-800: #1f3d50;
+  --color-secondary-900: #0a1822;
+
+  /* ─── Tertiary (groen) ─────────────────────── */
+  --color-tertiary-50: #eefbf0;
+  --color-tertiary-100: #ddf6e2;
+  --color-tertiary-200: #aedec1;
+  --color-tertiary-400: #7fc6a1;
+  --color-tertiary-500: #4fae80;
+  --color-tertiary-600: #3a8a6e;
+  --color-tertiary-700: #317962;
+  --color-tertiary-800: #1a5140;
+  --color-tertiary-900: #123027;
+
+  /* ─── Quaternary (paars) ───────────────────── */
+  --color-quaternary-50: #f6f1fd;
+  --color-quaternary-100: #ede5f8;
+  --color-quaternary-200: #e4d8f4;
+  --color-quaternary-300: #cebde1;
+  --color-quaternary-500: #b7a3cf;
+  --color-quaternary-600: #9f89bd;
+  --color-quaternary-700: #886faa;
+  --color-quaternary-800: #564270;
+  --color-quaternary-900: #21192b;
+
+  /* ─── Quinary (goud) ───────────────────────── */
+  --color-quinary-50: #fffdf5;
+  --color-quinary-100: #fff8de;
+  --color-quinary-300: #ddc490;
+  --color-quinary-400: #c9b079;
+  --color-quinary-500: #b99c60;
+  --color-quinary-600: #a88847;
+  --color-quinary-700: #6e582c;
+  --color-quinary-900: #362b16;
+
+  /* ─── Senary (oranje) ──────────────────────── */
+  --color-senary-50: #fef4ed;
+  --color-senary-100: #fde8d9;
+  --color-senary-200: #fbd1b4;
+  --color-senary-300: #f1d8a8;
+  --color-senary-400: #eca675;
+  --color-senary-500: #de9561;
+  --color-senary-600: #d0844d;
+  --color-senary-700: #a46132;
+  --color-senary-800: #78421d;
+  --color-senary-900: #3d1f0b;
+
+  /* ─── System ───────────────────────────────── */
+  --color-success-600: #0b6023;
+
+  /* ─── Semantic Colors ──────────────────────── */
+  --text-heading: #2f2c28;
+  --text-body: #4f4c48;
+  --text-muted: #9a9184;
+  --text-on-dark: #fffdfd;
+  --text-on-primary: #fffdfd;
+
+  --surface-bg: #f9f7f4;
+  --surface-card: #ffffff;
+  --surface-dark: #2f2c28;
+
+  --border-primary: #b4aea6;
+  --border-divider: #d5cec3;
+
+  /* ─── Button tokens ────────────────────────── */
+  --btn-primary-from: #4f4c48;
+  --btn-primary-to: #2f2c28;
+  --btn-primary-text: #fffdfd;
+  --btn-secondary-bg: #d5cec3;
+  --btn-secondary-text: #2f2c28;
+
+  /* ─── Spacing ──────────────────────────────── */
+  --spacing-5xs: 2px;
+  --spacing-4xs: 4px;
+  --spacing-3xs: 8px;
+  --spacing-2xs: 12px;
+  --spacing-xs: 16px;
+  --spacing-sm: 20px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  --spacing-4xl: 96px;
+  --spacing-5xl: 128px;
+
+  /* ─── Border Radius ────────────────────────── */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-xl: 48px;
+  --radius-round: 9999px;
+
+  /* ─── Border Width ─────────────────────────── */
+  --border-sm: 1px;
+  --border-md: 2px;
+  --border-lg: 4px;
+}
+
+/* ─── Desktop font sizes ─────────────────────── */
+@media (min-width: 768px) {
+  :root {
+    --font-size-heading-1: 56px;
+    --font-size-heading-2: 48px;
+    --font-size-heading-3: 32px;
+    --font-size-heading-4: 24px;
+    --font-size-heading-5: 20px;
+    --font-size-heading-6: 18px;
+    --font-size-subheading: 24px;
+    --font-size-body-large: 20px;
+    --font-size-quote: 20px;
+  }
+}

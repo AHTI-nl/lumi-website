@@ -1,0 +1,26 @@
+[
+  {
+    "id": "opening-noord",
+    "datum": "2025-09-15",
+    "titel": "Lumi nu beschikbaar in Amsterdam Noord",
+    "intro": "Vanaf vandaag kunnen ook bewoners van Amsterdam Noord gebruik maken van Lumi. Het digitale gezondheidsplatform breidt uit naar alle stadsdelen.",
+    "foto": "../public/assets/nieuws/opening-noord.jpg",
+    "slug": "opening-noord"
+  },
+  {
+    "id": "samenwerking-umc",
+    "datum": "2025-07-01",
+    "titel": "Amsterdam UMC verdiept samenwerking met Lumi",
+    "intro": "Amsterdam UMC en Lumi gaan nauwer samenwerken om patienten beter te ondersteunen bij het begrijpen van hun medische informatie.",
+    "foto": "../public/assets/nieuws/samenwerking-umc.jpg",
+    "slug": "samenwerking-umc"
+  },
+  {
+    "id": "lancering",
+    "datum": "2025-05-20",
+    "titel": "Lumi gelanceerd voor Amsterdammers",
+    "intro": "Vandaag gaat Lumi officieel live. Het platform helpt Amsterdammers grip te krijgen op hun gezondheid, zorg en welzijn.",
+    "foto": "../public/assets/nieuws/lancering.jpg",
+    "slug": "lancering"
+  }
+]

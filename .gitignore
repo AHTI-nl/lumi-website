@@ -1,0 +1,7 @@
+.DS_Store
+# Large gradient files (>5MB) - keep locally, too big for git
+public/assets/gradients/Laag_*
+public/assets/gradients/image*
+public/assets/gradients/Middel*
+public/assets/gradients/Rectangle*
+public/assets/gradients/Scherm*

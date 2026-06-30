@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <!-- Simplified medical cross -->
+  <rect x="14" y="4" width="12" height="40" rx="2" fill="#2f2c28"/>
+  <rect x="4" y="14" width="32" height="12" rx="2" fill="#2f2c28"/>
+  <text x="46" y="20" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#2f2c28">Amsterdam</text>
+  <text x="46" y="36" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#2f2c28">UMC</text>
+</svg>
