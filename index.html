@@ -15,7 +15,12 @@
 
     body {
       font-family: var(--font-family);
-      background: var(--surface-bg) url('public/assets/gradients/Ai1.png') center/cover no-repeat fixed;
+      background-color: var(--surface-bg);
+      background-image: url('public/assets/gradients/Ai1.png');
+      background-position: center center;
+      background-size: 120vmax;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -111,11 +116,6 @@
       <span class="soon">Binnenkort beschikbaar in Amsterdam</span>
     </div>
 
-    <div class="partners fade-in">
-      <img src="public/assets/partnerlogos/gemeenteadam.webp" alt="Gemeente Amsterdam">
-      <img src="public/assets/partnerlogos/amsterdamumc.webp" alt="Amsterdam UMC">
-      <img src="public/assets/partnerlogos/zilverenkruis.webp" alt="Zilveren Kruis">
-    </div>
   </div>
 
 </body>
