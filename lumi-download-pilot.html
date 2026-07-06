@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Lumi — Testversie</title>
+  <meta name="description" content="Download de testversie van Lumi voor Android of Apple.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens/design-tokens.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="/_vercel/insights/script.js"></script>
+  <style>
+    .download-hero {
+      padding: var(--spacing-4xl) 0 var(--spacing-2xl);
+      text-align: center;
+    }
+
+    .download-hero h1 {
+      margin-bottom: var(--spacing-3xs);
+    }
+
+    .download-hero .body-large {
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .tabs {
+      display: flex;
+      gap: var(--spacing-3xs);
+      justify-content: center;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-3xs);
+      padding: var(--spacing-3xs) var(--spacing-sm);
+      border-radius: var(--radius-round);
+      border: 1px solid var(--border-divider);
+      background: transparent;
+      font-family: var(--font-family);
+      font-size: var(--font-size-body);
+      font-weight: var(--font-weight-medium);
+      color: var(--text-body);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--border-primary);
+    }
+
+    .tab-btn.active {
+      background: var(--color-primary-800);
+      color: #fff;
+      border-color: var(--color-primary-800);
+    }
+
+    .tab-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .steps {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .step {
+      display: flex;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--color-primary-100);
+      color: var(--color-primary-800);
+      font-weight: var(--font-weight-semibold);
+      font-size: var(--font-size-body-small);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .step-content h3 {
+      font-size: var(--font-size-body-large);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--spacing-4xs);
+    }
+
+    .step-content p,
+    .step-content ul {
+      color: var(--text-muted);
+      font-size: var(--font-size-body);
+      line-height: 1.6;
+    }
+
+    .step-content ul {
+      padding-left: var(--spacing-sm);
+      margin-top: var(--spacing-4xs);
+      list-style: disc;
+    }
+
+    .step-content ul li {
+      margin-bottom: var(--spacing-4xs);
+    }
+
+    .step-content a {
+      color: var(--color-secondary-600);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .step-content a:hover {
+      color: var(--color-secondary-700);
+    }
+
+    .step-note {
+      background: var(--color-primary-100);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-xs) var(--spacing-sm);
+      margin-top: var(--spacing-4xs);
+      font-size: var(--font-size-body-small);
+      color: var(--text-muted);
+    }
+
+    .download-contact {
+      text-align: center;
+      padding: var(--spacing-2xl) 0 var(--spacing-4xl);
+      color: var(--text-muted);
+    }
+
+    .download-contact a {
+      color: var(--text-body);
+      font-weight: var(--font-weight-medium);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Navigation ─────────────────────────── -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="v1.html" class="nav-logo"><img src="public/assets/logo/Lumi Logo Charcoal.svg" alt="Lumi" style="height: 28px; width: auto;"></a>
+      <div class="nav-links">
+        <a href="v1.html#over-lumi">Over Lumi</a>
+        <a href="v1.html#hoe-het-werkt">Hoe het werkt</a>
+        <a href="faq.html">FAQ</a>
+        <a href="nieuws/index.html">Nieuws</a>
+        <div class="nav-cta">
+          <a href="v1.html#toegang" class="btn btn-primary btn-sm">Vraag toegang aan</a>
+        </div>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── Content ────────────────────────────── -->
+  <main class="page-content">
+    <div class="container">
+      <div class="download-hero fade-up">
+        <h1>Leuk dat je de app wil downloaden</h1>
+        <p class="body-large">Omdat we in een testfase zitten werkt het net iets anders dan je gewend bent. Volg de stappen hieronder.</p>
+      </div>
+
+      <div class="tabs fade-up">
+        <button class="tab-btn active" data-tab="apple">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Apple
+        </button>
+        <button class="tab-btn" data-tab="android">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24C14.86 8.3 13.47 7.94 12 7.94s-2.86.36-4.47.97L5.65 5.67c-.19-.29-.54-.38-.84-.22-.3.16-.42.54-.26.85L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg>
+          Android
+        </button>
+      </div>
+
+      <!-- ─── Apple Tab ──────────────────────── -->
+      <div class="tab-panel active" id="tab-apple">
+        <div class="steps fade-up">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Klik op de TestFlight link</h3>
+              <p>Klik via je telefoon op de link: <a href="https://testflight.apple.com/join/Ztz9F4M4">testflight.apple.com/join/Ztz9F4M4</a></p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Download TestFlight</h3>
+              <ul>
+                <li>Je komt op een pagina van Apple terecht</li>
+                <li>Klik op "Get TestFlight"</li>
+                <li>Download en installeer de TestFlight-app (gratis van Apple)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Open de link opnieuw in TestFlight</h3>
+              <ul>
+                <li>Open de TestFlight-app</li>
+                <li>Ga daarna terug naar het stappenplan en klik opnieuw op de <a href="https://testflight.apple.com/join/Ztz9F4M4">TestFlight-link</a></li>
+                <li>De TestFlight-app opent nu automatisch</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Installeer Lumi</h3>
+              <ul>
+                <li>Klik op "Install" bij Lumi</li>
+                <li>Wacht tot de app is geïnstalleerd</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h3>Start met testen</h3>
+              <p>Open de app — je gebruikt nu de testversie van Lumi!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── Android Tab ────────────────────── -->
+      <div class="tab-panel" id="tab-android">
+        <div class="steps fade-up">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Klik op de Google Play link</h3>
+              <ul>
+                <li>Klik via je telefoon op de link: <a href="https://play.google.com/store/apps/details?id=org.ahti.verhalenbouwer">play.google.com/store/apps/details?id=org.ahti.verhalenbouwer</a></li>
+                <li>Je komt op een Google-pagina voor de test app</li>
+                <li>Tik op "Accept invite"</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Ga naar de Google Play Store</h3>
+              <ul>
+                <li>Na het accepteren van de uitnodiging zie je een bevestigingspagina</li>
+                <li>Klik op "Download it on Google Play"</li>
+                <li>De Google Play Store opent automatisch</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Installeer de testversie van de app</h3>
+              <ul>
+                <li>In de Play Store zie je de app Lumi</li>
+                <li>Tik op "Installeren"</li>
+              </ul>
+              <div class="step-note">Soms staat er "(unreviewed)" achter de appnaam — dit betekent dat je een testversie installeert. Dit is normaal.</div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Open de app en start met testen</h3>
+              <p>Open de app — je gebruikt nu de testversie van Lumi!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="download-contact fade-up">
+        <p>Lukt het niet of heb je vragen? Neem dan contact op via <a href="mailto:hello@lumi.nl">hello@lumi.nl</a></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
