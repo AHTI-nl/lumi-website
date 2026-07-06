@@ -31,6 +31,7 @@
     }
 
     .download-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
       margin-bottom: var(--spacing-3xs);
     }
 
@@ -150,10 +151,30 @@
       color: var(--color-secondary-600);
       text-decoration: underline;
       text-underline-offset: 2px;
+      word-break: break-all;
     }
 
     .step-content a:hover {
       color: var(--color-secondary-700);
+    }
+
+    .step-btn {
+      display: inline-block;
+      margin-top: var(--spacing-3xs);
+      padding: var(--spacing-3xs) var(--spacing-sm);
+      background: var(--color-primary-800);
+      color: #fff !important;
+      border-radius: var(--radius-round);
+      font-size: var(--font-size-body-small);
+      font-weight: var(--font-weight-medium);
+      text-decoration: none !important;
+      transition: opacity 0.2s;
+      word-break: normal;
+    }
+
+    .step-btn:hover {
+      opacity: 0.85;
+      color: #fff !important;
     }
 
     .step-note {
@@ -168,7 +189,7 @@
     .download-contact {
       text-align: center;
       padding: var(--spacing-2xl) 0 var(--spacing-4xl);
-      color: var(--text-muted);
+      color: var(--text-body);
     }
 
     .download-contact a {
@@ -185,11 +206,11 @@
       gap: var(--spacing-3xs);
       padding: var(--spacing-lg);
       font-size: var(--font-size-body-small);
-      color: var(--text-muted);
+      color: var(--text-body);
     }
 
     .download-footer a {
-      color: var(--text-muted);
+      color: var(--text-body);
       text-decoration: none;
       transition: color 0.2s;
     }
@@ -236,7 +257,8 @@
             <div class="step-number">1</div>
             <div class="step-content">
               <h3>Klik op de TestFlight link</h3>
-              <p>Klik via je telefoon op de link: <a href="https://testflight.apple.com/join/Ztz9F4M4">testflight.apple.com/join/Ztz9F4M4</a></p>
+              <p>Klik via je telefoon op onderstaande link.</p>
+              <a href="https://testflight.apple.com/join/vHBYQJtb" class="step-btn">Open in TestFlight →</a>
             </div>
           </div>
 
@@ -258,7 +280,7 @@
               <h3>Open de link opnieuw in TestFlight</h3>
               <ul>
                 <li>Open de TestFlight-app</li>
-                <li>Ga daarna terug naar het stappenplan en klik opnieuw op de <a href="https://testflight.apple.com/join/Ztz9F4M4">TestFlight-link</a></li>
+                <li>Ga daarna terug naar het stappenplan en klik opnieuw op de <a href="https://testflight.apple.com/join/vHBYQJtb">TestFlight-link</a></li>
                 <li>De TestFlight-app opent nu automatisch</li>
               </ul>
             </div>
@@ -292,11 +314,8 @@
             <div class="step-number">1</div>
             <div class="step-content">
               <h3>Klik op de Google Play link</h3>
-              <ul>
-                <li>Klik via je telefoon op de link: <a href="https://play.google.com/store/apps/details?id=org.ahti.verhalenbouwer">play.google.com/store/apps/details?id=org.ahti.verhalenbouwer</a></li>
-                <li>Je komt op een Google-pagina voor de test app</li>
-                <li>Tik op "Accept invite"</li>
-              </ul>
+              <p>Klik via je telefoon op onderstaande link. Je komt op een Google-pagina voor de test app. Tik op "Accept invite".</p>
+              <a href="https://play.google.com/store/apps/details?id=org.ahti.verhalenbouwer" class="step-btn">Open in Google Play →</a>
             </div>
           </div>
 
