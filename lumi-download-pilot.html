@@ -12,9 +12,22 @@
   <link rel="stylesheet" href="css/main.css">
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
+    body {
+      background: url('public/assets/gradients/Ai1.png') center/cover no-repeat fixed;
+      min-height: 100vh;
+    }
+
+    .download-header {
+      padding: var(--spacing-xs) var(--spacing-lg);
+    }
+
     .download-hero {
-      padding: var(--spacing-4xl) 0 var(--spacing-2xl);
+      padding: var(--spacing-4xl) var(--spacing-lg) var(--spacing-xs);
       text-align: center;
+    }
+
+    .page-content {
+      padding-top: var(--spacing-sm);
     }
 
     .download-hero h1 {
@@ -22,9 +35,16 @@
     }
 
     .download-hero .body-large {
-      color: var(--text-muted);
+      color: var(--text-body);
       max-width: 520px;
       margin: 0 auto;
+    }
+
+    .tabs-title {
+      text-align: center;
+      font-size: var(--font-size-heading-5);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--spacing-xs);
     }
 
     .tabs {
@@ -80,13 +100,16 @@
     }
 
     .step {
-      display: flex;
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: var(--spacing-sm);
+      margin-bottom: var(--spacing-xs);
+      display: grid;
+      grid-template-columns: 32px 1fr;
       gap: var(--spacing-sm);
-      margin-bottom: var(--spacing-lg);
     }
 
     .step-number {
-      flex-shrink: 0;
       width: 32px;
       height: 32px;
       border-radius: 50%;
@@ -108,7 +131,7 @@
 
     .step-content p,
     .step-content ul {
-      color: var(--text-muted);
+      color: var(--text-body);
       font-size: var(--font-size-body);
       line-height: 1.6;
     }
@@ -139,7 +162,7 @@
       padding: var(--spacing-xs) var(--spacing-sm);
       margin-top: var(--spacing-4xs);
       font-size: var(--font-size-body-small);
-      color: var(--text-muted);
+      color: var(--text-body);
     }
 
     .download-contact {
@@ -154,38 +177,46 @@
       text-decoration: underline;
       text-underline-offset: 2px;
     }
+
+    .download-footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--spacing-3xs);
+      padding: var(--spacing-lg);
+      font-size: var(--font-size-body-small);
+      color: var(--text-muted);
+    }
+
+    .download-footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .download-footer a:hover {
+      color: var(--text-body);
+    }
   </style>
 </head>
 <body>
 
-  <!-- ─── Navigation ─────────────────────────── -->
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a href="v1.html" class="nav-logo"><img src="public/assets/logo/Lumi Logo Charcoal.svg" alt="Lumi" style="height: 28px; width: auto;"></a>
-      <div class="nav-links">
-        <a href="v1.html#over-lumi">Over Lumi</a>
-        <a href="v1.html#hoe-het-werkt">Hoe het werkt</a>
-        <a href="faq.html">FAQ</a>
-        <a href="nieuws/index.html">Nieuws</a>
-        <div class="nav-cta">
-          <a href="v1.html#toegang" class="btn btn-primary btn-sm">Vraag toegang aan</a>
-        </div>
-      </div>
-      <button class="nav-toggle" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
+  <!-- ─── Header ──────────────────────────────── -->
+  <header class="download-header">
+    <a href="v1.html"><img src="public/assets/logo/Lumi Logo Charcoal.svg" alt="Lumi" style="height: 28px; width: auto;"></a>
+  </header>
+
+  <!-- ─── Hero ───────────────────────────────── -->
+  <div class="download-hero fade-up">
+    <h1>Leuk dat je de app wil downloaden</h1>
+    <p class="body-large">Omdat we in een testfase zitten werkt het net iets anders dan je gewend bent. Volg de stappen hieronder.</p>
+  </div>
 
   <!-- ─── Content ────────────────────────────── -->
   <main class="page-content">
     <div class="container">
-      <div class="download-hero fade-up">
-        <h1>Leuk dat je de app wil downloaden</h1>
-        <p class="body-large">Omdat we in een testfase zitten werkt het net iets anders dan je gewend bent. Volg de stappen hieronder.</p>
-      </div>
+
+      <h3 class="tabs-title fade-up">Wat voor telefoon heb je?</h3>
 
       <div class="tabs fade-up">
         <button class="tab-btn active" data-tab="apple">
@@ -309,16 +340,30 @@
     </div>
   </main>
 
+  <!-- ─── Footer ─────────────────────────────── -->
+  <footer class="download-footer">
+    <a href="privacy.html">Privacybeleid</a>
+    <span>·</span>
+    <a href="gebruikersvoorwaarden.html">Gebruiksvoorwaarden</a>
+    <span>·</span>
+    <a href="faq.html">Veelgestelde vragen</a>
+  </footer>
+
   <script src="js/main.js"></script>
   <script>
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelector('[data-tab="' + tab + '"]').classList.add('active');
+      document.getElementById('tab-' + tab).classList.add('active');
+    }
+
     document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-      });
+      btn.addEventListener('click', () => switchTab(btn.dataset.tab));
     });
+
+    var ua = navigator.userAgent || '';
+    if (/android/i.test(ua)) switchTab('android');
   </script>
 </body>
 </html>
