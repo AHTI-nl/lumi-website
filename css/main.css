@@ -216,6 +216,10 @@ h5, .h5 {
   color: var(--text-heading);
 }
 
+.nav-links a.btn-primary {
+  color: var(--btn-primary-text);
+}
+
 .nav-cta {
   margin-left: var(--spacing-xs);
 }
