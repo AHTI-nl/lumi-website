@@ -992,6 +992,7 @@ h5, .h5 {
 
 /* ─── Legal content pages ───────────────────── */
 .legal-content h2 {
+  font-size: var(--font-size-heading-5);
   margin-top: var(--spacing-xl);
   margin-bottom: var(--spacing-xs);
 }
@@ -1008,6 +1009,13 @@ h5, .h5 {
 
 .legal-content li {
   margin-bottom: var(--spacing-3xs);
+}
+
+.legal-intro-card {
+  background: var(--color-primary-100);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
 }
 
 /* ─── Print styles ──────────────────────────── */
