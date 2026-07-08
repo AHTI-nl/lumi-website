@@ -1,5 +1,8 @@
 {
   "cleanUrls": true,
   "buildCommand": "",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "redirects": [
+    { "source": "/algemene-voorwaarden", "destination": "/gebruiksvoorwaarden", "permanent": true }
+  ]
 }
