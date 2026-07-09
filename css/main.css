@@ -995,6 +995,50 @@ h5, .h5 {
 .stagger > .fade-up:nth-child(6) { transition-delay: 400ms; }
 
 /* ─── Legal content pages ───────────────────── */
+.legal-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.legal-tab-bar {
+  display: flex;
+  gap: var(--spacing-3xs);
+}
+
+.legal-actions {
+  display: flex;
+  gap: var(--spacing-3xs);
+}
+
+.legal-tab {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-3xs) var(--spacing-xs);
+  border-radius: var(--radius-round);
+  border: 1px solid var(--border-divider);
+  font-family: var(--font-family);
+  font-size: var(--font-size-body-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-body);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.legal-tab:hover {
+  border-color: var(--border-primary);
+}
+
+.legal-tab.active {
+  background: var(--color-primary-800);
+  color: #fff;
+  border-color: var(--color-primary-800);
+  pointer-events: none;
+}
+
 .legal-content h2 {
   font-size: var(--font-size-heading-5);
   margin-top: var(--spacing-xl);
@@ -1026,7 +1070,8 @@ h5, .h5 {
 @media print {
   .nav,
   .footer,
-  .print-actions {
+  .print-actions,
+  .legal-tabs {
     display: none !important;
   }
 
