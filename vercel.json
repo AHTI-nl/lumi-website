@@ -4,9 +4,7 @@
   "outputDirectory": ".",
   "redirects": [
     { "source": "/algemene-voorwaarden", "destination": "/gebruiksvoorwaarden", "permanent": true },
-    { "source": "/v1", "destination": "/", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/download-pilot", "destination": "/lumi-download-pilot.html" }
+    { "source": "/v1", "destination": "/", "permanent": true },
+    { "source": "/download-pilot", "destination": "/lumi-download-pilot", "permanent": true }
   ]
 }
