@@ -259,8 +259,6 @@ h5, .h5 {
 }
 
 .nav-cta {
-  display: flex;
-  gap: var(--spacing-3xs);
   margin-left: var(--spacing-xs);
 }
 
@@ -310,7 +308,7 @@ h5, .h5 {
   }
 
   .nav-cta .btn {
-    flex: 1;
+    width: 100%;
   }
 }
 
