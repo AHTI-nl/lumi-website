@@ -171,6 +171,44 @@ h5, .h5 {
   flex-shrink: 0;
 }
 
+.store-links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.store-links-centered {
+  justify-content: center;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.store-badge:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.store-badge:active {
+  transform: translateY(0);
+}
+
+.store-badge img {
+  width: auto;
+  height: 54px;
+  display: block;
+}
+
+.store-badge-google img {
+  height: 54px;
+}
+
 /* ─── Navigation ─────────────────────────────── */
 .nav {
   position: fixed;
@@ -221,6 +259,8 @@ h5, .h5 {
 }
 
 .nav-cta {
+  display: flex;
+  gap: var(--spacing-3xs);
   margin-left: var(--spacing-xs);
 }
 
@@ -270,7 +310,7 @@ h5, .h5 {
   }
 
   .nav-cta .btn {
-    width: 100%;
+    flex: 1;
   }
 }
 
@@ -326,8 +366,22 @@ h5, .h5 {
 
 .hero-actions {
   display: flex;
+  align-items: center;
   gap: var(--spacing-xs);
   flex-wrap: wrap;
+}
+
+@media (max-width: 479px) {
+  .hero-actions,
+  .hero-actions .btn,
+  .store-links {
+    width: 100%;
+  }
+
+  .hero-actions .btn,
+  .store-links .btn {
+    flex: 1;
+  }
 }
 
 .hero-visual {
@@ -742,6 +796,10 @@ h5, .h5 {
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.cta-banner .store-links {
+  margin-bottom: var(--spacing-md);
 }
 
 /* ─── Footer ─────────────────────────────────── */
