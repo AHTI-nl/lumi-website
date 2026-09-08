@@ -1095,6 +1095,15 @@ h5, .h5 {
 .stagger > .fade-up:nth-child(6) { transition-delay: 400ms; }
 
 /* ─── Legal content pages ───────────────────── */
+.legal-title,
+.legal-content {
+  overflow-wrap: anywhere;
+}
+
+.legal-title {
+  hyphens: auto;
+}
+
 .legal-tabs {
   display: flex;
   align-items: center;
@@ -1106,6 +1115,7 @@ h5, .h5 {
 
 .legal-tab-bar {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--spacing-3xs);
 }
 
