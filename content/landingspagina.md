@@ -2,10 +2,10 @@
 
 ## Hero
 
-- **Badge:** Binnenkort beschikbaar in Amsterdam
+- **Badge:** Nu beschikbaar als bèta
 - **Titel:** Alles over jouw gezondheid, op één plek.
 - **Subtitel:** Lumi helpt je het overzicht bewaren — van vragen aan de huisarts tot brieven en uitslagen. Rustig, begrijpelijk en altijd bij de hand. Of het nu gaat om gezondheid, opvoeden, stress of geldzorgen.
-- **CTA primair:** Aanmelden wachtlijst
+- **CTA primair:** Download in de App Store / Download via Google Play
 - **CTA secundair:** Bekijk hoe het werkt
 
 ---
@@ -129,7 +129,7 @@
 
 - **Titel:** Begin vandaag met Lumi
 - **Subtitel:** Grip op je gezondheid, eindelijk op één plek. Gratis te gebruiken, altijd bij de hand.
-- **CTA primair:** Aanmelden wachtlijst
+- **CTA primair:** Download in de App Store / Download via Google Play
 - **CTA secundair:** Aanmelden als partner
 
 ---
