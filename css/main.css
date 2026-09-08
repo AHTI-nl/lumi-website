@@ -334,6 +334,17 @@ h5, .h5 {
   align-items: center;
 }
 
+@media (max-width: 767px) {
+  .hero {
+    /* Keep the hero full-screen without letting iOS Safari's toolbar cover it. */
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding-top: calc(72px + var(--spacing-lg));
+    padding-bottom: calc(var(--spacing-3xl) + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr;
