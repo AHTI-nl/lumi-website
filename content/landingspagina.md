@@ -6,6 +6,7 @@
 - **Titel:** Alles over jouw gezondheid, op één plek.
 - **Subtitel:** Lumi helpt je het overzicht bewaren — van vragen aan de huisarts tot brieven en uitslagen. Rustig, begrijpelijk en altijd bij de hand. Of het nu gaat om gezondheid, opvoeden, stress of geldzorgen.
 - **CTA primair:** Download in de App Store / Download via Google Play
+- **Feedback:** We waarderen jouw feedback, deze kun je mailen naar hello@lumi.nl.
 - **CTA secundair:** Bekijk hoe het werkt
 
 ---
@@ -130,6 +131,7 @@
 - **Titel:** Begin vandaag met Lumi
 - **Subtitel:** Grip op je gezondheid, eindelijk op één plek. Gratis te gebruiken, altijd bij de hand.
 - **CTA primair:** Download in de App Store / Download via Google Play
+- **Feedback:** We waarderen jouw feedback, deze kun je mailen naar hello@lumi.nl.
 - **CTA secundair:** Aanmelden als partner
 
 ---
