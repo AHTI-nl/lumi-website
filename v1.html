@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="tokens/design-tokens.css">
   <link rel="stylesheet" href="css/main.css">
   <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/js/analytics.js"></script>
 </head>
 <body>
 
@@ -24,7 +25,7 @@
         <a href="#hoe-het-werkt">Hoe het werkt</a>
         <a href="faq.html">FAQ</a>
         <div class="nav-cta">
-          <a href="mailto:hello@lumi.nl?subject=Aanmelden%20als%20partner&amp;body=We%20gaan%20graag%20het%20gesprek%20aan%20en%20nemen%20contact%20met%20je%20op.%20Kun%20je%20vast%20uitleggen%20waarom%20je%20ge%C3%AFnteresseerd%20bent%3F" class="btn btn-primary btn-sm">Aanmelden als partner</a>
+          <a href="mailto:hello@lumi.nl?subject=Aanmelden%20als%20partner&amp;body=We%20gaan%20graag%20het%20gesprek%20aan%20en%20nemen%20contact%20met%20je%20op.%20Kun%20je%20vast%20uitleggen%20waarom%20je%20ge%C3%AFnteresseerd%20bent%3F" class="btn btn-primary btn-sm" data-analytics-event="contact link clicked" data-analytics-purpose="partner" data-analytics-placement="header">Aanmelden als partner</a>
         </div>
       </div>
       <button class="nav-toggle" aria-label="Menu">
@@ -48,14 +49,14 @@
             Lumi helpt je het overzicht bewaren, van vragen aan de huisarts tot brieven en uitslagen. Rustig, begrijpelijk en altijd bij de hand. Of het nu gaat om gezondheid, opvoeden, stress of geldzorgen.
           </p>
           <div class="hero-actions">
-            <a href="https://apps.apple.com/nl/app/lumi/id6758712671" class="store-badge" target="_blank" rel="noopener noreferrer" aria-label="Download Lumi in de App Store">
+            <a href="https://apps.apple.com/nl/app/lumi/id6758712671" class="store-badge" target="_blank" rel="noopener noreferrer" aria-label="Download Lumi in de App Store" data-analytics-event="store link clicked" data-analytics-store="app_store" data-analytics-placement="hero">
               <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1685404800" alt="Download on the App Store">
             </a>
-            <a href="https://play.google.com/store/apps/details?id=org.ahti.verhalenbouwer" class="store-badge store-badge-google" target="_blank" rel="noopener noreferrer" aria-label="Download Lumi via Google Play">
+            <a href="https://play.google.com/store/apps/details?id=org.ahti.verhalenbouwer" class="store-badge store-badge-google" target="_blank" rel="noopener noreferrer" aria-label="Download Lumi via Google Play" data-analytics-event="store link clicked" data-analytics-store="google_play" data-analytics-placement="hero">
               <img src="public/assets/store-badges/GetItOnGooglePlay_Badge_Web_color_Dutch.svg" alt="Ontdek het op Google Play">
             </a>
           </div>
-          <p class="store-feedback">We waarderen jouw feedback, deze kun je mailen naar <a href="mailto:hello@lumi.nl">hello@lumi.nl</a>.</p>
+          <p class="store-feedback">We waarderen jouw feedback, deze kun je mailen naar <a href="mailto:hello@lumi.nl" data-analytics-event="contact link clicked" data-analytics-purpose="feedback" data-analytics-placement="hero">hello@lumi.nl</a>.</p>
         </div>
       </div>
     </div>
@@ -279,15 +280,15 @@
       <h2>Begin vandaag met Lumi</h2>
       <p>Grip op je gezondheid, eindelijk op één plek. Gratis te gebruiken, altijd bij de hand.</p>
       <div class="store-links store-links-centered">
-        <a href="https://apps.apple.com/nl/app/lumi/id6758712671" class="store-badge" target="_blank" rel="noopener noreferrer" aria-label="Download Lumi in de App Store">
+        <a href="https://apps.apple.com/nl/app/lumi/id6758712671" class="store-badge" target="_blank" rel="noopener noreferrer" aria-label="Download Lumi in de App Store" data-analytics-event="store link clicked" data-analytics-store="app_store" data-analytics-placement="download_section">
           <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1685404800" alt="Download on the App Store">
         </a>
-        <a href="https://play.google.com/store/apps/details?id=org.ahti.verhalenbouwer" class="store-badge store-badge-google" target="_blank" rel="noopener noreferrer" aria-label="Download Lumi via Google Play">
+        <a href="https://play.google.com/store/apps/details?id=org.ahti.verhalenbouwer" class="store-badge store-badge-google" target="_blank" rel="noopener noreferrer" aria-label="Download Lumi via Google Play" data-analytics-event="store link clicked" data-analytics-store="google_play" data-analytics-placement="download_section">
           <img src="public/assets/store-badges/GetItOnGooglePlay_Badge_Web_color_Dutch.svg" alt="Ontdek het op Google Play">
         </a>
       </div>
-      <p class="store-feedback">We waarderen jouw feedback, deze kun je mailen naar <a href="mailto:hello@lumi.nl">hello@lumi.nl</a>.</p>
-      <a href="mailto:hello@lumi.nl?subject=Aanmelden%20als%20partner&body=We%20gaan%20graag%20het%20gesprek%20aan%20en%20nemen%20contact%20met%20je%20op.%20Kun%20je%20vast%20uitleggen%20waarom%20je%20ge%C3%AFnteresseerd%20bent%3F" class="btn btn-outline btn-lg">Aanmelden als partner</a>
+      <p class="store-feedback">We waarderen jouw feedback, deze kun je mailen naar <a href="mailto:hello@lumi.nl" data-analytics-event="contact link clicked" data-analytics-purpose="feedback" data-analytics-placement="download_section">hello@lumi.nl</a>.</p>
+      <a href="mailto:hello@lumi.nl?subject=Aanmelden%20als%20partner&body=We%20gaan%20graag%20het%20gesprek%20aan%20en%20nemen%20contact%20met%20je%20op.%20Kun%20je%20vast%20uitleggen%20waarom%20je%20ge%C3%AFnteresseerd%20bent%3F" class="btn btn-outline btn-lg" data-analytics-event="contact link clicked" data-analytics-purpose="partner" data-analytics-placement="download_section">Aanmelden als partner</a>
     </div>
   </section>
 
@@ -300,7 +301,7 @@
           <a href="faq.html" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">FAQ</a>
           <a href="privacy.html" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">Privacybeleid</a>
           <a href="gebruiksvoorwaarden.html" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">Voorwaarden</a>
-          <a href="mailto:hello@lumi.nl" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">Contact</a>
+          <a href="mailto:hello@lumi.nl" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);" data-analytics-event="contact link clicked" data-analytics-purpose="general" data-analytics-placement="footer">Contact</a>
         </div>
       </div>
       <div class="footer-bottom">

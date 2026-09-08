@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="tokens/design-tokens.css">
   <link rel="stylesheet" href="css/main.css">
   <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/js/analytics.js"></script>
 </head>
 <body>
 
@@ -26,7 +27,7 @@
         <a href="index.html#hoe-het-werkt">Hoe het werkt</a>
         <a href="faq.html">FAQ</a>
         <div class="nav-cta">
-          <a href="mailto:hello@lumi.nl?subject=Aanmelden%20als%20partner&amp;body=We%20gaan%20graag%20het%20gesprek%20aan%20en%20nemen%20contact%20met%20je%20op.%20Kun%20je%20vast%20uitleggen%20waarom%20je%20ge%C3%AFnteresseerd%20bent%3F" class="btn btn-primary btn-sm">Aanmelden als partner</a>
+          <a href="mailto:hello@lumi.nl?subject=Aanmelden%20als%20partner&amp;body=We%20gaan%20graag%20het%20gesprek%20aan%20en%20nemen%20contact%20met%20je%20op.%20Kun%20je%20vast%20uitleggen%20waarom%20je%20ge%C3%AFnteresseerd%20bent%3F" class="btn btn-primary btn-sm" data-analytics-event="contact link clicked" data-analytics-purpose="partner" data-analytics-placement="header">Aanmelden als partner</a>
         </div>
       </div>
       <button class="nav-toggle" aria-label="Menu">
@@ -53,11 +54,11 @@
       </div>
 
       <p class="fade-up" style="color: var(--text-muted); margin-bottom: var(--spacing-xs);">Digitale Voordeur Amsterdam</p>
-      <h1 class="fade-up">Privacyverklaring Lumi app</h1>
+      <h1 class="fade-up">Privacyverklaring Lumi</h1>
 
       <div class="legal-content" style="margin-top: var(--spacing-xl);">
 
-        <p>Privacy is belangrijk bij het gebruik van de Lumi app. In deze verklaring leggen wij uit hoe de Lumi app omgaat met je persoonsgegevens. </p>
+        <p>Privacy is belangrijk bij het gebruik van Lumi. In deze verklaring leggen wij uit hoe de Lumi app omgaat met je persoonsgegevens. Onderaan lees je welke gebruiksstatistieken we op deze website verzamelen.</p>
 
         <div class="legal-intro-card">
           <h2 style="margin-top: 0;">De Lumi App</h2>
@@ -108,8 +109,12 @@
         <h2>Welke rechten heb ik ten aanzien van mijn persoonsgegevens?</h2>
         <p>Je hebt het recht op inzage, correctie van onjuiste of onvolledige persoonsgegevens, en om persoonsgegevens te verwijderen bijvoorbeeld wanneer die niet meer nodig zijn. Je kunt deze rechten uitoefenen door de informatie die je zelf in de app gezet hebt, via de Lumi app in te zien, te wijzigen, of te verwijderen. Informatie uit Zorg Documenten kun je niet aanpassen, deze informatie kan alleen door de desbetreffende hulpverlener worden gewijzigd. Om dit soort informatie te wijzigen kun je contact opnemen met je hulpverlener. Je kunt Zorg Documenten wel verwijderen of er apart informatie aan toevoegen.</p>
 
+        <h2>Statistieken op deze website</h2>
+        <p>ahti gebruikt PostHog, gehost in de Europese Unie, om te begrijpen hoe deze website wordt gebruikt en om de website te verbeteren. We meten welke pagina’s worden bezocht en hoe vaak bezoekers op de download- en contactlinks klikken. Ook verzamelen we algemene browser- en apparaatgegevens en de herkomst van bezoeken, zoals een verwijzende website of een campagnecode in een link of QR-code.</p>
+        <p>Voor deze PostHog-statistieken plaatsen we geen cookies en slaan we geen gegevens op in de lokale opslag van je browser. PostHog gebruikt het IP-adres en browsergegevens tijdelijk om een dagelijks wisselende code te berekenen waarmee bezoeken worden geteld. We maken geen gebruikersprofielen of schermopnames. Websitebezoeken worden niet gekoppeld aan je Lumi-account of de inhoud van je datakluis. Bij een klik op een e-maillink meten we alleen de klik; de inhoud van je e-mail wordt niet naar PostHog gestuurd.</p>
+
         <h2>Waar kan ik terecht met vragen of opmerkingen?</h2>
-        <p>Als je vragen hebt over de app of deze privacyverklaring, dan kun je contact opnemen via <a href="mailto:hello@lumi.nl">hello@lumi.nl</a></p>
+        <p>Als je vragen hebt over de app of deze privacyverklaring, dan kun je contact opnemen via <a href="mailto:hello@lumi.nl" data-analytics-event="contact link clicked" data-analytics-purpose="privacy" data-analytics-placement="privacy_content">hello@lumi.nl</a></p>
 
       </div>
     </div>
@@ -124,7 +129,7 @@
           <a href="faq.html" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">FAQ</a>
           <a href="privacy.html" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">Privacybeleid</a>
           <a href="gebruiksvoorwaarden.html" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">Voorwaarden</a>
-          <a href="mailto:hello@lumi.nl" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">Contact</a>
+          <a href="mailto:hello@lumi.nl" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);" data-analytics-event="contact link clicked" data-analytics-purpose="general" data-analytics-placement="footer">Contact</a>
         </div>
       </div>
       <div class="footer-bottom">
