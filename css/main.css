@@ -445,17 +445,17 @@ h5, .h5 {
   position: relative;
   z-index: 1;
   width: auto;
-  max-height: 520px;
+  max-height: 640px;
   object-fit: contain;
 }
 
 .hero-lichtpunt {
   position: absolute;
-  right: -20px;
-  bottom: -20px;
+  right: -60px;
+  bottom: -10px;
   z-index: 2;
-  width: 240px;
-  height: 240px;
+  width: 390px;
+  height: 390px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -475,29 +475,30 @@ h5, .h5 {
   z-index: 1;
   text-align: center;
   padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
 }
 
 .hero-lichtpunt__title {
-  font-size: var(--font-size-body-small);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-body-large);
+  font-weight: var(--font-weight-bold);
   color: #1A2332;
-  margin-bottom: var(--spacing-3xs);
+  line-height: 1.1;
 }
 
 .hero-qr {
-  width: 100px;
-  height: 100px;
+  width: 160px;
+  height: 160px;
   display: block;
   margin: 0 auto;
-  background: #fff;
-  padding: 6px;
-  border-radius: var(--radius-xs);
 }
 
 .hero-lichtpunt__hint {
-  font-size: var(--font-size-body-xsmall);
+  font-size: var(--font-size-body-large);
   color: #1A2332;
-  margin-top: var(--spacing-3xs);
+  line-height: 1.1;
 }
 
 /* Hero entry animation (desktop only) */
