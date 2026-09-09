@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Lumi</title>
+  <link rel="icon" type="image/svg+xml" href="/public/assets/favicon/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/public/assets/favicon/favicon-96x96.png">
+  <link rel="shortcut icon" href="/public/assets/favicon/favicon.ico">
+  <meta name="description" content="Download de Lumi app voor iPhone of Android.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens/design-tokens.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/js/analytics.js"></script>
+</head>
+<body>
+
+  <!-- ─── Navigation ─────────────────────────── -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo"><img src="public/assets/logo/Lumi Logo Charcoal.svg" alt="Lumi" style="height: 28px; width: auto;"></a>
+      <div class="nav-links">
+        <a href="index.html#over-lumi">Over Lumi</a>
+        <a href="index.html#hoe-het-werkt">Hoe het werkt</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── Content ────────────────────────────── -->
+  <main class="download-page">
+    <div class="container" style="max-width: 560px; text-align: center;">
+      <img src="public/assets/logo/Lumi Logo Charcoal.svg" alt="Lumi" style="height: 40px; width: auto; margin-bottom: var(--spacing-lg);">
+      <h1 style="font-size: var(--font-size-heading-2); margin-bottom: var(--spacing-xs);">Download Lumi op je telefoon</h1>
+      <div class="store-links store-links-centered" style="margin-bottom: var(--spacing-md);">
+        <a href="https://apps.apple.com/nl/app/lumi/id6758712671" class="store-badge" target="_blank" rel="noopener noreferrer" aria-label="Download Lumi in de App Store" data-analytics-event="store link clicked" data-analytics-store="app_store" data-analytics-placement="download_page">
+          <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/nl-nl?releaseDate=1685404800" alt="Download in de App Store">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=org.ahti.verhalenbouwer" class="store-badge store-badge-google" target="_blank" rel="noopener noreferrer" aria-label="Download Lumi via Google Play" data-analytics-event="store link clicked" data-analytics-store="google_play" data-analytics-placement="download_page">
+          <img src="public/assets/store-badges/GetItOnGooglePlay_Badge_Web_color_Dutch.svg" alt="Ontdek het op Google Play">
+        </a>
+      </div>
+      <p class="store-feedback">Help Lumi beter maken: <a href="https://tally.so/r/EkRNzX?bron=download-pagina">vul het formulier in</a> of mail naar <a href="mailto:hello@lumi.nl?subject=Feedback%20op%20Lumi">hello@lumi.nl</a>.</p>
+    </div>
+  </main>
+
+  <!-- ─── Footer ─────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--spacing-md); margin-bottom: var(--spacing-lg);">
+        <img src="public/assets/logo/Lumi Logo White.svg" alt="Lumi" style="height: 28px; width: auto;">
+        <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap;">
+          <a href="faq.html" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">FAQ</a>
+          <a href="privacy.html" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">Privacybeleid</a>
+          <a href="gebruiksvoorwaarden.html" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">Voorwaarden</a>
+          <a href="mailto:hello@lumi.nl" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lumi. Gemaakt in Amsterdam.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

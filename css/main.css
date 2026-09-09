@@ -1193,6 +1193,15 @@ h5, .h5 {
   margin-bottom: var(--spacing-xl);
 }
 
+/* ─── Download page ─────────────────────────── */
+.download-page {
+  padding-top: calc(72px + var(--spacing-4xl));
+  padding-bottom: var(--spacing-4xl);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
 /* ─── Print styles ──────────────────────────── */
 @media print {
   .nav,

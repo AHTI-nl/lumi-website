@@ -5,6 +5,18 @@
   "redirects": [
     { "source": "/algemene-voorwaarden", "destination": "/gebruiksvoorwaarden", "permanent": true },
     { "source": "/v1", "destination": "/", "permanent": true },
-    { "source": "/download-pilot", "destination": "/lumi-download-pilot", "permanent": true }
+    { "source": "/download-pilot", "destination": "/lumi-download-pilot", "permanent": true },
+    {
+      "source": "/download",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(iPhone|iPad).*" }],
+      "destination": "https://apps.apple.com/nl/app/lumi/id6758712671",
+      "permanent": false
+    },
+    {
+      "source": "/download",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*Android.*" }],
+      "destination": "https://play.google.com/store/apps/details?id=org.ahti.verhalenbouwer",
+      "permanent": false
+    }
   ]
 }
