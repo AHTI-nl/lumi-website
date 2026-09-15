@@ -6,7 +6,22 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initMobileNav();
   initNavScroll();
+  initSparringpartner();
 });
+
+/* ─── Sparringpartner chat ──────────────────── */
+function initSparringpartner() {
+  // www is primary; both registered hosts are supported by the integration.
+  if (!['lumi.nl', 'www.lumi.nl'].includes(window.location.hostname)) return;
+  if (document.getElementById('ahti-chat-widget')) return;
+
+  const script = document.createElement('script');
+  script.id = 'ahti-chat-widget';
+  script.type = 'text/javascript';
+  script.src = `https://embed.sparringpartner.digitalevoordeur.amsterdam/app.js?ver=${Date.now()}`;
+  script.async = true;
+  document.body.appendChild(script);
+}
 
 /* ─── Scroll Animations (IntersectionObserver) ─ */
 function initScrollAnimations() {
