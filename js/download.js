@@ -1,4 +1,4 @@
-// Amplify does not support Vercel's User-Agent redirect conditions.
+// Route phone downloads to the appropriate app store after the page renders.
 // Desktop visitors (and visitors without JavaScript) keep the store chooser.
 (() => {
   const userAgent = navigator.userAgent || '';

@@ -73,8 +73,7 @@ The Lumi project owner confirmed on 2026-09-08 that **Cookieless server hash
 mode** and **Discard client IP data** are both enabled. The browser project token
 cannot independently inspect these admin settings.
 
-Vercel Web Analytics has been removed for the Amplify migration. PostHog is the
-website analytics integration.
+PostHog is the website analytics integration.
 The privacy text's cookieless claims describe the PostHog integration specifically.
 
 ## Public token and secret scanning
