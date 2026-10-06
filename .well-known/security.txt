@@ -1,4 +1,4 @@
-Contact: mailto:security@lumi.nl
+Contact: mailto:security@ahti.nl
 Policy: https://www.lumi.nl/responsible-disclosure
 Preferred-Languages: nl, en
 Canonical: https://www.lumi.nl/.well-known/security.txt
