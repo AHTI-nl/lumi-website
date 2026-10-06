@@ -1,0 +1,10 @@
+[
+  { "source": "https://lumi.nl", "target": "https://www.lumi.nl", "status": "301" },
+  { "source": "/algemene-voorwaarden", "target": "/gebruiksvoorwaarden", "status": "301" },
+  { "source": "/algemene-voorwaarden.html", "target": "/gebruiksvoorwaarden", "status": "301" },
+  { "source": "/v1", "target": "/", "status": "301" },
+  { "source": "/v1.html", "target": "/", "status": "301" },
+  { "source": "/download-pilot", "target": "/lumi-download-pilot", "status": "301" },
+  { "source": "/download-pilot.html", "target": "/lumi-download-pilot", "status": "301" },
+  { "source": "/<*>", "target": "/404.html", "status": "404-200" }
+]

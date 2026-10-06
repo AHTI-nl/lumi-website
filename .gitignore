@@ -1,4 +1,5 @@
 .DS_Store
+dist/
 # Large gradient files (>5MB) - keep locally, too big for git
 public/assets/gradients/Laag_*
 public/assets/gradients/image*
