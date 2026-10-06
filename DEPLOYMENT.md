@@ -7,6 +7,10 @@ environment variables. GitHub pushes to `main` trigger production builds.
 During migration, first deploy `feat/amplify-hosting` on Amplify's own hostname.
 No merge or website DNS cutover is needed for this initial test deployment.
 
+Current test app: `d23q6dzef6ds5u`, branch `feat/amplify-hosting`, at
+<https://amplify-test.d23q6dzef6ds5u.amplifyapp.com>. The initially connected
+`main` branch has automatic builds disabled until promotion.
+
 ## Connect GitHub manually
 
 1. Keep PR #38 unmerged while testing.
@@ -26,6 +30,9 @@ No merge or website DNS cutover is needed for this initial test deployment.
    [`amplify-redirects.json`](amplify-redirects.json), preserving their order.
    These rules are configured separately; Amplify does **not** read this JSON
    file or `vercel.json` automatically. Remove any default SPA fallback.
+   The final rule uses `404-200` with `/404.html`: verified on this app to return
+   the custom page with HTTP 404. The `404` rule instead produced a 302 redirect
+   to the error page, ending in HTTP 200.
 
 An operator can also apply the redirect rules after the app exists:
 
@@ -47,6 +54,8 @@ On the feature branch's Amplify URL, check:
   uses JavaScript; without JavaScript the store links remain available.
   Open the Amplify `/download` URL directly on the phone: the existing QR code
   points to `lumi.nl/download`, which still reaches Vercel before DNS cutover.
+  Return to the browser after visiting the store: the rendered chooser should
+  remain available, and Back/reload should not automatically reopen the store.
 
 PostHog and the Sparringpartner widget are intentionally limited to `lumi.nl`
 and `www.lumi.nl` in the existing browser code. The Amplify hostname cannot
@@ -89,7 +98,8 @@ does not apply to a phone; test mobile routing on the Amplify URL separately.
 ## Promote the tested deployment
 
 Only after merge approval, merge PR #38, connect `main` within the same Amplify
-app, and verify its build. Mark `main` as the production branch and update the
+app, enable its automatic builds, and verify its build. Mark `main` as the
+production branch and update the
 custom-domain mappings to it. Repeat the custom-hostname checks against that
 deployment before cutting over DNS. Disconnect `feat/amplify-hosting` after the
 migration, leaving one app and one connected branch. No merge is authorized by
