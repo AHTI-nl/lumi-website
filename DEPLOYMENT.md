@@ -1,23 +1,27 @@
 # AWS Amplify hosting
 
-One Amplify app (`lumi-website`), one production branch (`main`), in
+Target: one Amplify app (`lumi-website`), one production branch (`main`), in
 `verhalenbouwer-prd` (`322513863400`), region `eu-central-1` (Frankfurt).
 This is a static site; it needs no server, database, Amplify backend or
 environment variables. GitHub pushes to `main` trigger production builds.
+During migration, first deploy `feat/amplify-hosting` on Amplify's own hostname.
+No merge or website DNS cutover is needed for this initial test deployment.
 
 ## Connect GitHub manually
 
-1. Ensure the Amplify migration changes are merged into `main`.
+1. Keep PR #38 unmerged while testing.
 2. Sign into `verhalenbouwer-prd` and open the
    [Amplify console in Frankfurt](https://eu-central-1.console.aws.amazon.com/amplify/home?region=eu-central-1).
 3. Choose **Create new app → GitHub**. Install/authorize the
    **AWS Amplify (eu-central-1)** GitHub app for `AHTI-nl`, granting access to
    **only `lumi-website`**. An organization owner may need to approve this.
-4. Select `AHTI-nl/lumi-website` and branch `main`. Use app name `lumi-website`.
+4. Select `AHTI-nl/lumi-website` and branch `feat/amplify-hosting`.
+   Use app name `lumi-website`.
    Amplify reads `amplify.yml`: run tests, run `npm run build`, publish `dist`.
    Use Node.js 22 or later. There are no packages to install.
 5. Save and deploy. Keep automatic branch creation and pull-request previews
-   disabled. Connect only `main` and mark it as the production branch.
+   disabled. Connect only this feature branch for now, and leave custom domains
+   unset. Use the HTTPS branch URL displayed by Amplify.
 6. In **Hosting → Rewrites and redirects → Edit**, replace the rules with
    [`amplify-redirects.json`](amplify-redirects.json), preserving their order.
    These rules are configured separately; Amplify does **not** read this JSON
@@ -32,7 +36,7 @@ aws amplify update-app --profile verhalenbouwer-prd --region eu-central-1 \
 
 ## Verify before connecting the domain
 
-On the `https://main.APP_ID.amplifyapp.com` URL, check:
+On the feature branch's Amplify URL, check:
 
 - `/`, `/faq`, `/privacy`, `/gebruiksvoorwaarden`, `/nieuws/` and `/download`.
 - Images, styling, news JSON and `/documents/lumi-uitlegfolder-pilot.pdf`.
@@ -41,18 +45,63 @@ On the `https://main.APP_ID.amplifyapp.com` URL, check:
 - `/download` opens the App Store on iPhone/iPad and Google Play on Android.
   Desktop browsers show the QR code and both store links. This routing now
   uses JavaScript; without JavaScript the store links remain available.
+  Open the Amplify `/download` URL directly on the phone: the existing QR code
+  points to `lumi.nl/download`, which still reaches Vercel before DNS cutover.
 
 PostHog and the Sparringpartner widget are intentionally limited to `lumi.nl`
-and `www.lumi.nl` in the existing browser code. Verify them again on the custom
-domain after migration.
+and `www.lumi.nl` in the existing browser code. The Amplify hostname cannot
+validate those integrations end to end. Use the pre-cutover custom-domain
+checks below before moving public traffic.
+
+## Test the real hostname before moving public traffic
+
+After the feature branch passes the preview checks, prepare a custom-domain
+association for `lumi.nl` and `www.lumi.nl` against that branch. Add only the
+certificate validation CNAME in the shared Route 53 account. Do not replace
+the existing website A/CNAME records yet.
+
+Once Amplify has deployed the certificate and custom hostnames to CloudFront,
+test using a local DNS override that sends `lumi.nl` and `www.lumi.nl` to the
+Amplify distribution only on the test machine. This keeps the real hostname,
+TLS verification and browser origin while public visitors still reach Vercel.
+First verify the association is sufficiently provisioned: it may report
+`AWAITING_APP_CNAME` until the public cutover. Do not bypass TLS checks or assume
+the custom hostname is ready solely because the preview works.
+
+For an HTTP check, use the distribution hostname supplied by Amplify:
+
+```sh
+curl --connect-to www.lumi.nl:443:AMPLIFY_DISTRIBUTION.cloudfront.net:443 \
+  --head https://www.lumi.nl/
+```
+
+For browser checks, temporarily map both hostnames to an IP resolved from that
+distribution, using a local hosts override or a separate browser profile with
+DNS overrides. Confirm responses come from Amplify and use a fresh browser
+profile to avoid Vercel's cached responses. Remove overrides after testing.
+
+Verify the chat widget opens and exchanges a test message, and that PostHog
+receives page views and annotated link events. These are real production
+integrations; use synthetic test content. Check apex-to-www redirects, paths,
+query parameters and valid HTTPS on both names. A local override on a laptop
+does not apply to a phone; test mobile routing on the Amplify URL separately.
+
+## Promote the tested deployment
+
+Only after merge approval, merge PR #38, connect `main` within the same Amplify
+app, and verify its build. Mark `main` as the production branch and update the
+custom-domain mappings to it. Repeat the custom-hostname checks against that
+deployment before cutting over DNS. Disconnect `feat/amplify-hosting` after the
+migration, leaving one app and one connected branch. No merge is authorized by
+the initial preview setup.
 
 ## Connect `lumi.nl`
 
 DNS is in a different account, `verhalenbouwer-shared` (`322171058948`), in
 Route 53 zone `Z067112010T5YQF6F9UB`. Keep this hosted zone and delegation.
 
-1. In the Amplify app, add custom domain `lumi.nl`, mapping both the apex and
-   `www` to the same `main` branch. Keep `www.lumi.nl` as the canonical domain;
+1. In the Amplify app, confirm custom domain `lumi.nl` maps both the apex and
+   `www` to the tested `main` branch. Keep `www.lumi.nl` as the canonical domain;
    the first redirect rule preserves the current apex-to-www redirect.
 2. In the shared account's Route 53 zone, add the exact certificate validation
    CNAME supplied by Amplify. Leave that CNAME in place for certificate renewal.
