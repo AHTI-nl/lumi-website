@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Marketing website voor Lumi — digitaal gezondheidsplatform voor Amsterdammers",
   "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
     "start": "npx serve ."
   }
 }

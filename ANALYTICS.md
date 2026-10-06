@@ -2,7 +2,8 @@
 
 The website reuses Lumi's existing EU PostHog project. Every website event has
 `surface: website`; filter website reports by this property. Existing app events
-are not relabeled. Localhost and Vercel preview hosts do not initialize PostHog.
+are not relabeled. Only `lumi.nl` and `www.lumi.nl` initialize PostHog; localhost
+and Amplify hostnames do not.
 
 ## Implementation
 
@@ -72,17 +73,18 @@ The Lumi project owner confirmed on 2026-09-08 that **Cookieless server hash
 mode** and **Discard client IP data** are both enabled. The browser project token
 cannot independently inspect these admin settings.
 
-Vercel Web Analytics remains enabled during rollout. Once PostHog ingestion is
-verified, it can be removed in a follow-up to avoid maintaining two dashboards.
+Vercel Web Analytics has been removed for the Amplify migration. PostHog is the
+website analytics integration.
 The privacy text's cookieless claims describe the PostHog integration specifically.
 
 ## Public token and secret scanning
 
 The `phc_` project token in the browser code is public by design. It allows event
 ingestion and client configuration, not reading analytics or administering the
-project. A Vercel environment variable would still need to be emitted into the
+project. A hosting environment variable would still need to be emitted into the
 browser bundle; it helps manage environments but does not make this token secret.
-This static site currently needs no build step, so the token is configured directly.
+The static build copies files without substitution, so the token is configured
+directly.
 
 Do not disable secret scanning. If a generic scanner flags this public token,
 review the finding and use an exception scoped to this token/finding with the
