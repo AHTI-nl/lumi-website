@@ -97,11 +97,20 @@ does not apply to a phone; test mobile routing on the Amplify URL separately.
 
 ## Promote the tested deployment
 
-Before merging, freeze the existing Vercel production deployment: in the
-`lumi-marketing` Vercel project, open **Settings → Git → Connected Git
-Repository → Disconnect**. Keep the project, its current production deployment
-and its domain assignments. Confirm no deployment is queued or running. This
-prevents the merge from changing the Vercel version retained for rollback.
+`vercel.json` includes `"git": { "deploymentEnabled": false }`. Vercel reads
+this setting from the pushed commit and skips Git-triggered deployments for
+commits containing it, including the eventual merge commit. This allows the
+migration without Vercel dashboard access, retaining the existing Vercel
+production deployment for rollback. While the change is only on this feature
+branch, other commits to `main` can still trigger Vercel deployments; coordinate
+a pause in other production changes during rollout.
+
+Before merging, check this branch's GitHub deployment records to verify that
+the commit introducing this setting produced no new Vercel deployment. Record
+the current production deployment ID and check again immediately after merge.
+The setting controls Git-triggered deployments, not manual or API deployments.
+With Vercel access, disconnecting the repository under **Settings → Git** is
+an alternative. Keep the existing project, deployment and domain assignments.
 
 Only after merge approval, merge PR #38, connect `main` within the same Amplify
 app, enable its automatic builds, and verify its build. Mark `main` as the
@@ -111,10 +120,12 @@ deployment before cutting over DNS. Disconnect `feat/amplify-hosting` after the
 migration, leaving one app and one connected branch. No merge is authorized by
 the initial preview setup.
 
-After DNS cutover, keep the frozen Vercel deployment available for 24–48 hours
-while checking traffic and integrations. Then retire it after confirming the
-migration is stable. Restoring DNS during that window returns traffic to the
-known Vercel version; it is subject to DNS cache expiry, not instantaneous.
+After DNS cutover, keep the Vercel deployment available for 24–48 hours while
+checking traffic and integrations. Then have its Vercel project owner retire it
+after confirming the migration is stable. Vercel access is required for that
+cleanup, but not for the AWS DNS cutover. Restoring DNS during that window
+returns traffic to the retained Vercel version; it is subject to DNS cache
+expiry, not instantaneous.
 
 ## Connect `lumi.nl`
 
@@ -134,8 +145,9 @@ Route 53 zone `Z067112010T5YQF6F9UB`. Keep this hosted zone and delegation.
 4. Wait for Amplify domain verification and DNS propagation. Check HTTPS on
    both names, apex-to-www redirection with paths/query strings, the page/asset
    checks above, the mobile download flow, PostHog and the chat widget.
-5. Disconnect this repository from Vercel and retire the Vercel project after
-   the custom-domain checks pass. There should be one active production app.
+5. After the custom-domain checks and rollback window, have the Vercel project
+   owner disconnect the repository and retire the Vercel project. Leave one
+   active Amplify production branch.
 
 Before editing DNS, export the live records for rollback:
 
@@ -170,4 +182,5 @@ against the deployed app.
 References: [GitHub connection](https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html),
 [build specification](https://docs.aws.amazon.com/amplify/latest/userguide/yml-specification-syntax.html),
 [redirects and clean URLs](https://docs.aws.amazon.com/amplify/latest/userguide/redirect-rewrite-examples.html),
-[custom domains](https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html).
+[custom domains](https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html),
+[Vercel Git deployment control](https://vercel.com/docs/project-configuration/git-configuration#git.deploymentenabled).
