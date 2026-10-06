@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsible Disclosure — Lumi</title>
+  <link rel="icon" type="image/svg+xml" href="/public/assets/favicon/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/public/assets/favicon/favicon-96x96.png">
+  <link rel="shortcut icon" href="/public/assets/favicon/favicon.ico">
+  <meta name="description" content="How to report security vulnerabilities in AHTI systems, applications, and services responsibly.">
+  <link rel="canonical" href="https://www.lumi.nl/responsible-disclosure">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens/design-tokens.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="/js/analytics.js"></script>
+</head>
+<body>
+
+  <!-- ─── Navigation ─────────────────────────── -->
+  <nav class="nav" lang="nl">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo"><img src="public/assets/logo/Lumi Logo Charcoal.svg" alt="Lumi" style="height: 28px; width: auto;"></a>
+      <div class="nav-links">
+        <a href="index.html#over-lumi">Over Lumi</a>
+        <a href="index.html#hoe-het-werkt">Hoe het werkt</a>
+        <a href="faq.html">FAQ</a>
+        <div class="nav-cta">
+          <a href="mailto:hello@lumi.nl?subject=Aanmelden%20als%20partner&amp;body=We%20gaan%20graag%20het%20gesprek%20aan%20en%20nemen%20contact%20met%20je%20op.%20Kun%20je%20vast%20uitleggen%20waarom%20je%20ge%C3%AFnteresseerd%20bent%3F" class="btn btn-primary btn-sm" data-analytics-event="contact link clicked" data-analytics-purpose="partner" data-analytics-placement="header">Aanmelden als partner</a>
+        </div>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="page-content section">
+    <div class="container" style="max-width: 800px;">
+      <h1 class="legal-title">Responsible Disclosure</h1>
+
+      <div class="legal-content" style="margin-top: var(--spacing-xl);">
+        <p>At AHTI, we take the security and privacy of our systems and users seriously. If you discover a potential security vulnerability in one of our systems, applications, or services, we appreciate you reporting it to us responsibly.</p>
+
+        <h2>Reporting a vulnerability</h2>
+        <p>Please report potential security vulnerabilities to:</p>
+        <p><strong><a href="mailto:security@ahti.nl">security@ahti.nl</a></strong></p>
+        <p>Please include, where possible:</p>
+        <ul>
+          <li>A description of the vulnerability;</li>
+          <li>The affected system, application, URL, or endpoint;</li>
+          <li>Steps to reproduce the issue;</li>
+          <li>The potential impact;</li>
+          <li>Any supporting evidence, such as screenshots, request/response examples, or proof-of-concept code;</li>
+          <li>Your contact details, if you would like us to keep you informed about our investigation.</li>
+        </ul>
+        <p>Please do not include personal data or other sensitive information unless this is necessary to demonstrate the vulnerability.</p>
+
+        <h2>What we ask from you</h2>
+        <p>When investigating a potential vulnerability, please:</p>
+        <ul>
+          <li>Do not access, modify, copy, delete, or disclose data beyond what is strictly necessary to demonstrate the vulnerability;</li>
+          <li>Do not attempt to obtain access to accounts or information belonging to other users;</li>
+          <li>Do not perform denial-of-service attacks or other activities that may affect the availability or performance of our systems;</li>
+          <li>Do not use social engineering, phishing, physical attacks, or attacks against AHTI employees, suppliers, or users;</li>
+          <li>Do not install malware or establish persistent access to our systems;</li>
+          <li>Do not use automated scanning that generates excessive traffic or materially impacts our services;</li>
+          <li>Stop testing and contact us if you unexpectedly gain access to sensitive, personal, or confidential information;</li>
+          <li>Allow us reasonable time to investigate and remediate the issue before publicly disclosing it.</li>
+        </ul>
+
+        <h2>What you can expect from us</h2>
+        <p>If you act in accordance with this policy, we will:</p>
+        <ul>
+          <li>Acknowledge your report and assess the reported vulnerability;</li>
+          <li>Treat your report confidentially;</li>
+          <li>Keep you informed of relevant progress where reasonably possible;</li>
+          <li>Work to remediate confirmed vulnerabilities based on their severity and risk;</li>
+          <li>Not pursue legal action against you solely for good-faith security research performed in accordance with this policy.</li>
+        </ul>
+        <p>If you have unintentionally accessed information that you were not authorised to access, please report this immediately and do not retain, use, or further disclose that information.</p>
+
+        <h2>Scope</h2>
+        <p>This policy applies to internet-accessible systems, applications, and services operated by AHTI.</p>
+        <p>Systems or services operated entirely by third parties may be outside our control. If you are unsure whether a system is in scope, please contact us before conducting further testing.</p>
+        <p>The following activities are explicitly out of scope:</p>
+        <ul>
+          <li>Denial-of-service or load testing;</li>
+          <li>Social engineering or phishing;</li>
+          <li>Physical security testing;</li>
+          <li>Testing of third-party infrastructure not operated by AHTI;</li>
+          <li>Automated testing that may degrade system availability;</li>
+          <li>Attempts to access, extract, alter, or delete data belonging to other users.</li>
+        </ul>
+
+        <h2>Disclosure</h2>
+        <p>Please do not publicly disclose a vulnerability before AHTI has had a reasonable opportunity to investigate and address it.</p>
+        <p>We are happy to discuss coordinated disclosure once the vulnerability has been assessed and, where applicable, remediated.</p>
+
+        <h2>Rewards</h2>
+        <p>AHTI does not currently operate a bug bounty programme. Reporting a vulnerability therefore does not create an entitlement to financial compensation or another reward.</p>
+        <p>We nevertheless greatly appreciate responsible reports that help us improve the security of our systems.</p>
+
+        <h2>Contact</h2>
+        <p>Security reports can be sent to:</p>
+        <p><strong><a href="mailto:security@ahti.nl">security@ahti.nl</a></strong></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ─── Footer ─────────────────────────────── -->
+  <footer class="footer" lang="nl">
+    <div class="container">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--spacing-md); margin-bottom: var(--spacing-lg);">
+        <img src="public/assets/logo/Lumi Logo White.svg" alt="Lumi" style="height: 28px; width: auto;">
+        <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap;">
+          <a href="faq.html" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">FAQ</a>
+          <a href="privacy.html" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">Privacybeleid</a>
+          <a href="gebruiksvoorwaarden.html" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);">Voorwaarden</a>
+          <a href="mailto:hello@lumi.nl" style="color: var(--color-primary-400); font-size: var(--font-size-body-small);" data-analytics-event="contact link clicked" data-analytics-purpose="general" data-analytics-placement="footer">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lumi. Alle rechten voorbehouden.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

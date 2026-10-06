@@ -14,6 +14,7 @@ const paths = [
   ...pages,
   'css', 'js', 'tokens', 'public/assets', 'documents', 'nieuws',
   'content/nieuws/berichten.json',
+  '.well-known/security.txt',
 ];
 
 for (const path of paths) {
