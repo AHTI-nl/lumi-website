@@ -9,3 +9,4 @@ frontend:
     baseDirectory: dist
     files:
       - '**/*'
+      - '.well-known/security.txt'

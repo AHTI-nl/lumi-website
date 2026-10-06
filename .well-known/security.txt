@@ -1,0 +1,5 @@
+Contact: mailto:security@lumi.nl
+Policy: https://www.lumi.nl/responsible-disclosure
+Preferred-Languages: nl, en
+Canonical: https://www.lumi.nl/.well-known/security.txt
+Expires: 2027-10-01T00:00:00.000Z
