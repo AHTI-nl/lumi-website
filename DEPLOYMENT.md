@@ -1,18 +1,19 @@
 # AWS Amplify hosting
 
-One static Amplify app, with `main` as the eventual production branch:
+One static Amplify app with one production branch. Every merge to `main`
+automatically runs the tests, builds the site and deploys it.
 
 | Setting | Value |
 | --- | --- |
 | App | `lumi-website` (`d23q6dzef6ds5u`) |
 | AWS account | `verhalenbouwer-prd` (`322513863400`) |
 | Region | `eu-central-1` (Frankfurt) |
-| Test branch | `feat/amplify-hosting` |
-| Test URL | <https://amplify-test.d23q6dzef6ds5u.amplifyapp.com> |
+| Branch | `main` |
+| Website | <https://www.lumi.nl> (`lumi.nl` redirects here) |
+| Amplify URL | <https://main.d23q6dzef6ds5u.amplifyapp.com> |
 
-The test branch deploys automatically. Builds for `main` are disabled until
-promotion. Automatic branch creation and pull-request previews stay disabled.
-The site needs no backend, environment variables or private API keys.
+Automatic branch creation and pull-request previews are disabled. Hosting
+needs no backend, environment variables or private API keys.
 
 ## Build and routing
 
@@ -39,9 +40,9 @@ Keep rule order intact. The final `404-200` rule targets `/404.html`; verified
 on this app to serve the custom page with HTTP 404. Local static servers do
 not apply these rules.
 
-## Test before cutover
+## Verify a deployment
 
-On the Amplify test URL, verify:
+Check that the `main` build succeeded in Amplify, then verify on the website:
 
 - `/`, `/faq`, `/privacy`, `/gebruiksvoorwaarden`, `/nieuws/` and `/download`.
 - Images, styling, news JSON and `/documents/lumi-uitlegfolder-pilot.pdf`.
@@ -50,64 +51,40 @@ On the Amplify test URL, verify:
   on desktop. Back/reload should leave the chooser visible without reopening
   the store. Also test returning from the native store on a real phone.
 
-Open the test site's `/download` URL directly on the phone. The printed QR
-code points to `lumi.nl/download`, which reaches the current production host
-until DNS cutover.
-
 PostHog and the chat widget only activate on `lumi.nl` and `www.lumi.nl`.
-Verify these integrations using the real-hostname checks below.
+PostHog uses the public browser token in `js/analytics.js`. Chat visibility is
+also controlled by the chat service's `lumi-website` origin configuration.
 
-## Production rollout
-
-The previous hosting GitHub integration is suspended. Keep it suspended and
-retain the existing deployment and domain assignments for rollback.
+## Domains and DNS
 
 DNS is in `verhalenbouwer-shared` (`322171058948`), Route 53 zone
-`Z067112010T5YQF6F9UB`. Export the current records before changing DNS:
+`Z067112010T5YQF6F9UB`. Both custom domains map to `main`.
+
+| Record | Target |
+| --- | --- |
+| `lumi.nl` A alias | `d16ojxlk8twz58.cloudfront.net` (alias zone `Z2FDTNDATAQYW2`) |
+| `www.lumi.nl` CNAME | `d16ojxlk8twz58.cloudfront.net` |
+
+Keep Amplify's certificate-validation CNAME for automatic certificate renewal.
+Routine releases require no DNS changes. Leave email, API and app records
+unchanged when maintaining website DNS.
+
+Export the current records before a DNS change:
 
 ```sh
 aws route53 list-resource-record-sets --profile verhalenbouwer-shared \
-  --hosted-zone-id Z067112010T5YQF6F9UB > /tmp/lumi-dns-before-amplify.json
+  --hosted-zone-id Z067112010T5YQF6F9UB > /tmp/lumi-dns-before-change.json
 ```
-
-1. Prepare custom domains `lumi.nl` and `www.lumi.nl` against the test branch.
-   Add Amplify's certificate-validation CNAME in the shared DNS account. Keep
-   the existing website A/CNAME records until the cutover step.
-2. Once the certificate and custom hostnames are deployed, test using a local
-   DNS override to the Amplify distribution. This preserves the real browser
-   origin while public visitors continue using the existing deployment.
-   Verify HTTPS, apex-to-www redirects, paths/query strings, PostHog events
-   and a chat conversation using synthetic content. Use a fresh browser
-   profile and remove the local override after testing.
-3. After merge approval, merge PR #38, enable automatic builds for `main` in
-   the same Amplify app and verify its build. Map both domains to `main` and
-   repeat the real-hostname checks. Preview setup does not authorize a merge.
-4. Replace only the website records with Amplify's supplied targets: apex A
-   alias to its CloudFront distribution (alias zone `Z2FDTNDATAQYW2`) and
-   `www` CNAME to its supplied hostname. Keep certificate validation and all
-   email, API and other records intact.
-5. Verify both domains from normal browsers and a mobile connection. After
-   a stable 24–48 hour rollback window, disconnect the test branch and have
-   the previous hosting owner retire the old deployment. Leave one Amplify
-   app with one connected production branch.
-
-For an HTTP check before cutover, substitute the distribution supplied by
-Amplify. Its custom hostname must already have a valid certificate:
-
-```sh
-curl --connect-to www.lumi.nl:443:AMPLIFY_DISTRIBUTION.cloudfront.net:443 \
-  --head https://www.lumi.nl/
-```
-
-The domain association may remain `AWAITING_APP_CNAME` until public cutover;
-verify the actual response and TLS certificate before proceeding. A laptop's
-local DNS override does not apply to a phone.
 
 ## Rollback
 
-Restore the saved apex A and `www` CNAME records from the DNS export. Keep the
-previous deployment and domain assignments available throughout the rollback
-window. Traffic returns as DNS caches expire; rollback is not instantaneous.
+For a website regression, revert the offending change through a pull request
+and let `main` redeploy. Redirect rules are configured separately; restore
+them separately if they caused the regression.
+
+For a DNS rollback, restore only the affected website records from the saved
+export. The previous destination must still serve the domains. Traffic returns
+as DNS caches expire.
 
 References: [GitHub connection](https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html),
 [build specification](https://docs.aws.amazon.com/amplify/latest/userguide/yml-specification-syntax.html),
