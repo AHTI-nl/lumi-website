@@ -97,6 +97,12 @@ does not apply to a phone; test mobile routing on the Amplify URL separately.
 
 ## Promote the tested deployment
 
+Before merging, freeze the existing Vercel production deployment: in the
+`lumi-marketing` Vercel project, open **Settings → Git → Connected Git
+Repository → Disconnect**. Keep the project, its current production deployment
+and its domain assignments. Confirm no deployment is queued or running. This
+prevents the merge from changing the Vercel version retained for rollback.
+
 Only after merge approval, merge PR #38, connect `main` within the same Amplify
 app, enable its automatic builds, and verify its build. Mark `main` as the
 production branch and update the
@@ -104,6 +110,11 @@ custom-domain mappings to it. Repeat the custom-hostname checks against that
 deployment before cutting over DNS. Disconnect `feat/amplify-hosting` after the
 migration, leaving one app and one connected branch. No merge is authorized by
 the initial preview setup.
+
+After DNS cutover, keep the frozen Vercel deployment available for 24–48 hours
+while checking traffic and integrations. Then retire it after confirming the
+migration is stable. Restoring DNS during that window returns traffic to the
+known Vercel version; it is subject to DNS cache expiry, not instantaneous.
 
 ## Connect `lumi.nl`
 
