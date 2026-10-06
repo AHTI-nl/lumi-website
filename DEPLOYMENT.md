@@ -12,8 +12,12 @@ automatically runs the tests, builds the site and deploys it.
 | Website | <https://www.lumi.nl> (`lumi.nl` redirects here) |
 | Amplify URL | <https://main.d23q6dzef6ds5u.amplifyapp.com> |
 
-Automatic branch creation and pull-request previews are disabled. Hosting
-needs no backend, environment variables or private API keys.
+Pull requests targeting `main` get temporary Amplify preview deployments.
+Amplify links the preview URL from the GitHub PR, rebuilds it when commits
+are pushed, and removes it when the PR is closed or merged. Automatic
+deployment of ordinary branches remains disabled.
+
+Hosting needs no backend, environment variables or private API keys.
 
 ## Build and routing
 
@@ -42,7 +46,8 @@ not apply these rules.
 
 ## Verify a deployment
 
-Check that the `main` build succeeded in Amplify, then verify on the website:
+Use the PR preview to check changes before merging. After merging, check that
+the `main` build succeeded in Amplify and verify on the production website:
 
 - `/`, `/faq`, `/privacy`, `/gebruiksvoorwaarden`, `/nieuws/` and `/download`.
 - Images, styling, news JSON and `/documents/lumi-uitlegfolder-pilot.pdf`.
@@ -52,6 +57,7 @@ Check that the `main` build succeeded in Amplify, then verify on the website:
   the store. Also test returning from the native store on a real phone.
 
 PostHog and the chat widget only activate on `lumi.nl` and `www.lumi.nl`.
+They do not run on PR previews.
 PostHog uses the public browser token in `js/analytics.js`. Chat visibility is
 also controlled by the chat service's `lumi-website` origin configuration.
 
@@ -87,6 +93,7 @@ export. The previous destination must still serve the domains. Traffic returns
 as DNS caches expire.
 
 References: [GitHub connection](https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html),
+[PR previews](https://docs.aws.amazon.com/amplify/latest/userguide/pr-previews.html),
 [build specification](https://docs.aws.amazon.com/amplify/latest/userguide/yml-specification-syntax.html),
 [redirects](https://docs.aws.amazon.com/amplify/latest/userguide/redirect-rewrite-examples.html),
 [custom domains](https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html).
