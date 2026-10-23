@@ -18,7 +18,7 @@
 
 ### Kaart 1
 - **Illustratie:** thinking a lot.svg
-- **Titel:** "Moet ik nu naar de huisarts of niet?"
+- **Titel:** "Hoe kan ik omgaan met stress?"
 - **Tekst:** Lumi helpt je snel het juiste antwoord vinden. Stel je vraag wanneer je wilt — Lumi is dag en nacht beschikbaar.
 
 ### Kaart 2
